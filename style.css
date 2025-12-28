@@ -1,0 +1,208 @@
+/* =========================================
+   MediMind AI Pro — Red Gradient Premium UI
+   ========================================= */
+
+/* 1. Dynamic Red Gradient Background */
+.stApp {
+    background: linear-gradient(135deg, #4b0000 0%, #8b0000 40%, #d32f2f 100%);
+    background-attachment: fixed;
+}
+
+/* 2. Typography & Visibility Fixes */
+/* Since background is dark red, we use White and Gold for text */
+h1 {
+    background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+    text-align: center;
+}
+
+.sub-title {
+    text-align: center;
+    color: #ffd700 !important; /* Gold */
+    font-weight: 500;
+    margin-top: -15px;
+    letter-spacing: 1px;
+}
+
+.section-label {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* 3. Glassmorphism for Inputs & Selectboxes */
+div[data-baseweb="select"], .stChatInput {
+    background: rgba(255, 255, 255, 0.95) !important; 
+    border: 2px solid #ffd700 !important;
+    border-radius: 12px !important;
+}
+
+/* Ensure text inside dropdown is black for contrast */
+div[data-baseweb="select"] div {
+    color: #1a1a1a !important;
+}
+
+/* 4. Result Cards */
+.result-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    margin-top: 15px;
+    color: white;
+}
+
+.result-card h3 {
+    color: #ffd700 !important;
+}
+
+/* 5. Gold Micro-interaction Button */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%) !important;
+    color: #4b0000 !important; /* Dark text on gold button */
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3) !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* 6. Chat Messages */
+[data-testid="stChatMessage"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px);
+    border-radius: 20px !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 7. Hide Streamlit Branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* 3. Input & Dropdown Styling (Dark Glass for White Text) */
+div[data-baseweb="select"], .stChatInput {
+    background: rgba(0, 0, 0, 0.5) !important; /* Dark background */
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffd700 !important; /* Gold border */
+    border-radius: 12px !important;
+}
+
+/* Force text inside the search bar/selectbox to be white */
+div[data-baseweb="select"] div, 
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input {
+    color: #ffffff !important;
+}
+
+/* Ensure the dropdown list items (when open) are readable */
+div[data-baseweb="popover"] ul {
+    background-color: #4b0000 !important; /* Match red theme */
+}
+
+div[data-baseweb="popover"] li {
+    color: #ffffff !important;
+}
+
+/* Chat Input placeholder and text fix */
+.stChatInput textarea {
+    color: #ffffff !important;
+}
+/* =========================================
+   MediMind AI Pro — Red Gradient Premium UI
+   ========================================= */
+
+/* 1. Dynamic Red Gradient Background */
+.stApp {
+    background: linear-gradient(135deg, #4b0000 0%, #8b0000 40%, #d32f2f 100%);
+    background-attachment: fixed;
+}
+
+/* 2. Header & Typography - INCREASED SIZE */
+.main-title-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4.5rem !important; /* SIGNIFICANTLY INCREASED SIZE */
+    font-weight: 900 !important;
+    margin-bottom: 5px !important;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+.sub-title {
+    text-align: center;
+    color: #ffd700 !important; 
+    font-size: 1.3rem !important; /* Slightly larger subtitle */
+    font-weight: 500;
+    margin-top: -10px;
+    letter-spacing: 2px;
+}
+
+.section-label {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* 3. Search Bar - DARK BACKGROUND WITH WHITE TEXT */
+div[data-baseweb="select"], .stChatInput {
+    background: rgba(0, 0, 0, 0.4) !important; 
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffd700 !important;
+    border-radius: 12px !important;
+}
+
+/* Force text inside the search bar to be white */
+div[data-baseweb="select"] div, 
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input {
+    color: #ffffff !important;
+}
+
+/* Dropdown list items styling */
+div[data-baseweb="popover"] ul {
+    background-color: #2b0000 !important;
+}
+
+div[data-baseweb="popover"] li {
+    color: #ffffff !important;
+}
+
+/* 4. Gold Micro-interaction Button */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%) !important;
+    color: #4b0000 !important; 
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+}
+
+/* 5. Utility */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
