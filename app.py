@@ -24,6 +24,7 @@ def load_data():
 def get_all_symptoms(data):
     symptoms_set = set()
     for row in data:
+        # Splitting by common delimiters to get individual keywords if necessary
         s_list = row["Symptoms"].replace(",", " ").split()
         for s in s_list:
             symptoms_set.add(s.lower().strip())
@@ -35,7 +36,9 @@ def find_disease(selected_symptom, data):
         if selected_symptom.lower() in row["Symptoms"].lower():
             results.append({
                 "Disease": row["Disease"],
-                "Medications": row["Medications"]
+                "Medications": row["Medications"],
+                "Precautions": row["Precautions"],
+                "Doctor_Specialist": row["Doctor_Specialist"]
             })
     return results
 
@@ -43,7 +46,6 @@ def find_disease(selected_symptom, data):
 st.set_page_config(page_title="MediMind AI Pro", page_icon="🩺", layout="centered")
 
 # --- INJECT CSS ---
-# This looks for 'style.css' in the same folder
 if os.path.exists("style.css"):
     with open("style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -70,6 +72,8 @@ with st.container():
                 for m in matches:
                     st.markdown(f"### 🦠 Disease: {m['Disease']}")
                     st.markdown(f"💊 **Medications:** {m['Medications']}")
+                    st.markdown(f"🛡️ **Precautions:** {m['Precautions']}")
+                    st.markdown(f"👨‍⚕️ **Specialist:** {m['Doctor_Specialist']}")
                     st.markdown("---")
             else:
                 st.error("❌ No disease found in our current database.")
@@ -111,8 +115,14 @@ if prompt := st.chat_input("Ex: I have a persistent cough..."):
             openings = [f"I'm sorry you're dealing with {detected_symptom}.", f"It sounds like {detected_symptom} is the issue."]
             findings = [f"This is often associated with **{m['Disease']}**.", f"My data suggests this points toward **{m['Disease']}**."]
             meds = [f"Common treatments include {m['Medications']}.", f"Standard medications for this are {m['Medications']}."]
+            precautions = [f"For better recovery, try to: {m['Precautions']}.", f"You should follow these precautions: {m['Precautions']}."]
+            specialists = [f"I recommend consulting a **{m['Doctor_Specialist']}**.", f"It would be best to see a **{m['Doctor_Specialist']}** for professional advice."]
             
-            assistant_reply = f"{random.choice(openings)} {random.choice(findings)} {random.choice(meds)} Please consult a professional for a final diagnosis."
+            assistant_reply = (
+                f"{random.choice(openings)} {random.choice(findings)} "
+                f"{random.choice(meds)} {random.choice(precautions)} "
+                f"{random.choice(specialists)} Please consult a professional for a final diagnosis."
+            )
         else:
             assistant_reply = "I couldn't identify a specific symptom from that description. Could you try using a keyword like 'fever' or 'headache'?"
 
